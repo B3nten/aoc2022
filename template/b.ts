@@ -1,6 +1,7 @@
-import * as p from "https://deno.land/std@0.165.0/path/mod.ts";
+import { fromFileUrl } from "path";
+import * as _ from "lodash"
 const input = await Deno.readTextFile(
-  p.fromFileUrl(import.meta.resolve("./input.txt")),
+  fromFileUrl(import.meta.resolve("./input.txt")),
 );
 
 console.log(input);
