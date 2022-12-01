@@ -1,0 +1,6 @@
+{
+	"imports": {
+		"path": "https://deno.land/std@0.165.0/path/mod.ts",
+		"lodash": "https://deno.land/x/lodash@4.17.15-es/lodash.js"
+	}
+}
