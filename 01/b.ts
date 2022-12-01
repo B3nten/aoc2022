@@ -1,6 +1,19 @@
-import * as p from "https://deno.land/std@0.165.0/path/mod.ts";
+import { fromFileUrl } from "path";
 const input = await Deno.readTextFile(
-  p.fromFileUrl(import.meta.resolve("./input.txt")),
+	fromFileUrl(import.meta.resolve("./input.txt"))
 );
 
-console.log(input);
+const elfArray = input.split("\n\n");
+const elfCalorieArray = [];
+for (const elf in elfArray) {
+	const calories = elfArray[elf]
+		.split("\n")
+		.reduce((a, b) => Number(a) + Number(b), 0);
+	elfCalorieArray.push(calories);
+}
+console.log(
+	elfCalorieArray
+		.sort((a, b) => b - a)
+		.splice(0, 3)
+		.reduce((a, b) => a + b, 0)
+);
