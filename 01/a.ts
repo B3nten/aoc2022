@@ -6,10 +6,9 @@ const input = await Deno.readTextFile(
 const elfArray = input.split("\n\n");
 const elfCalorieArray = [];
 for (const elf in elfArray) {
-	const calories = elfArray[elf]
-		.split("\n")
-		.reduce((a, b) => Number(a) + Number(b), 0);
-	elfCalorieArray.push(calories);
+  const calories = elfArray[elf]
+    .split("\n")
+    .reduce((a, b) => Number(a) + Number(b), 0);
+  elfCalorieArray.push(calories);
 }
-console.log(elfCalorieArray.sort((a, b) => b - a))
-
+console.log(elfCalorieArray.sort((a, b) => b - a));
